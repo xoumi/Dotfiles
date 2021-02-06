@@ -16,8 +16,8 @@ bspc config top_padding             23
 bspc config top_monocle_padding     -30
 
 bspc config border_width            3
-bspc config normal_border_color     "#000000"
-bspc config focused_border_color    "#a3b8df"
+bspc config normal_border_color     "#ffffff"
+bspc config focused_border_color    "#000000"
 
 bspc config split_ratio             0.50
 bspc config borderless_monocle      true

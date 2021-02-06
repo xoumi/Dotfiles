@@ -43,7 +43,7 @@ font:
   bold_italic:
     family: Iosevka
     style: Bold Italic
-  size: 9.5
+  size: 10
 
   offset:
     x: 1
@@ -84,7 +84,7 @@ colors:
     white:   '#d9d6cf'
 
 # Background opacity
-background_opacity: 0.94
+background_opacity: 0.80
 
 cursor:
   # Values for `style`:

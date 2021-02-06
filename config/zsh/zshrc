@@ -1,3 +1,5 @@
+# https://github.com/spicycode/ze-best-zsh-config
+
 ZSH_CONFIG=~/Dotfiles/config/zsh
 
 source $ZSH_CONFIG/setops.zsh

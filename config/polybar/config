@@ -1,11 +1,11 @@
 [colors]
-background = #fff
+foreground = #fff
 background-alt = #444
-foreground = #333
-primary = #a3c3ff
-secondary = #798aac
+background = #212b35
+primary = #a7e3ff
+secondary = #C7D3FF
 alert = #938cfc
-spotify = #50d872
+spotify = #91F2B5
 yt = #f05151
 
 [bar/common]
@@ -77,8 +77,9 @@ label = %title:0:30:...%
 type = internal/bspwm
 
 label-focused = %name%
-label-focused-background= ${colors.primary}
+label-focused-foreground= ${colors.primary}
 label-focused-padding = 2
+label-focused-overline= ${colors.primary}
 
 label-occupied = %name%
 label-occupied-overline= ${colors.primary}
@@ -129,7 +130,7 @@ label = %time% - %date%
 format = <label>
 format-prefix = ""
 format-prefix-font = 2
-format-background = ${colors.primary}
+format-foreground = ${colors.secondary}
 format-padding = 2
 
 [module/pulseaudio]
@@ -141,34 +142,12 @@ format-volume-prefix-font = 2
 label-volume = %percentage%%
 label-muted =  " Mute"
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging =  <label-charging>
-format-charging-underline = ${colors.primary}
-format-charging-prefix = " "
-format-charging-prefix-foreground = "#aaaa00"
-format-charging-prefix-font = 2
-
-format-full = FULL
-format-full-foreground = "#eeaa00"
-format-full-underline = ${colors.primary}
-format-full-prefix = " "
-format-full-prefix-foreground = "#aaaa00"
-format-full-prefix-font = 2
-
-format-discharging = <label-discharging> format-discharging-underline = ${colors.secondary}
-format-discharging-prefix = " "
-format-discharging-prefix-font = 2
-
 [module/spotify]
 type = custom/script
 tail = true
 format-prefix = "   "
 format = <label>
+format-foreground = ${colors.background}
 exec = ~/.config/polybar/scripts/spotify-scroll.sh
 
 [module/yt]

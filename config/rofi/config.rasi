@@ -1,12 +1,13 @@
 * {
   background-color: @transparent;
   border-color: transparent;
-  text-color: #333;
+  text-color: #fff;
   width: 250px;
-  font: "Iosevka Bold 11";
-  primary: #a3c3ff;
-  secondary: #798aac;
-  bg: #fff;
+  font: "Bahnschrift 11";
+  primary: #a7e3ff;
+  secondary: #2c4763;
+  bg: #212b35;
+  bgl: #273645;
   myHigh: bold italic;
   transparent: #0000;
 }
@@ -21,18 +22,16 @@ inputbar {
   children: [prompt,entry];
   padding: 0px 5px 0px 0px;
   background-color: @bg;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 prompt {
-  padding: 4px 15px 3px 15px;
-  border: 0 solid 0 solid  3px solid 0 solid;
-  background-color: @primary;
-  border-color: @primary;
+  padding: 6px 15px 5px 15px;
+  color: @primary;
 }
 
 entry {
-  padding: 4px 15px 3px 15px;
+  padding: 6px 15px 5px 5px;
 }
 
 listview {
@@ -44,17 +43,16 @@ listview {
   lines: 5;
   background-color: @bg;
   margin: 5px 0 0 0;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 element {
   border: 0 0 2px 0;
-  border-color: #eee;
+  border-color: @bgl;
   highlight: @myHigh;
-  padding: 3px 15px;
+  padding: 5px 15px;
 }
 
 element selected {
-  border: 0 0 3px 0;
-  border-color: @primary;
+  color: @primary;
 }

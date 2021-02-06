@@ -12,6 +12,7 @@ path=(
 export HYPHEN_INSENSITIVE="true"
 export COMPLETION_WAITING_DOTS="true"
 
+export ZDOTDIR=$HOME/.cache/zsh/
 export HIST_STAMPS="dd.mm.yyyy"
 export HISTFILE=~/.cache/zsh/history
 export HISTSIZE=1000

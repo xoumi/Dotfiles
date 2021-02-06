@@ -1,6 +1,6 @@
 add_newline = false
 
-format = "$status$directory$git_branch$git_state$git_status$character"
+format = "$status(red)$directory(red)$git_branch$git_state$git_status$character"
 
 [character]
 success_symbol = "[»](bold green)"
@@ -9,6 +9,9 @@ error_symbol= "[»](bold red)"
 
 [package]
 disabled = true
+
+[directory]
+style="white"
 
 [git_branch]
 format = "[$symbol$branch]($style) "

@@ -1,6 +1,7 @@
 alias f="vifm"
 alias t="tmux"
 alias n="nvim"
+alias p="pnpm"
 alias cc="clear"
 alias install="sudo pacman -S"
 alias fire="cd $FIREFOX_DIR" 

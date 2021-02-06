@@ -1,15 +1,14 @@
 #!/usr/bin/bash
+
+# Don't remember exactly where I got this, but this was the starting point:
+# https://www.youtube.com/watch?v=36QV8VE5PVY
+
 declare -A URLS
 
 URLS=(
   ["google"]="https://www.google.com/search?q="
-  ["duckduckgo"]="https://www.duckduckgo.com/?q="
   ["github"]="https://github.com/search?q="
-  ["stackoverflow"]="http://stackoverflow.com/search?q="
-  ["searchcode"]="https://searchcode.com/?q="
   ["youtube"]="https://www.youtube.com/results?search_query="
-  ["vimawesome"]="http://vimawesome.com/?q="
-  ["unsplash"]="https://unsplash.com/search/photos/"
   ["reddit"]="https://reddit.com/r/"
 )
 
