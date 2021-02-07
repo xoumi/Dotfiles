@@ -653,3 +653,23 @@ body.remotebar .view-player .player-bar-wrapper {
 .Header__image-inner {
 	box-shadow: unset;
 }
+
+.SidebarList__title {
+  display: none;
+}
+
+.SidebarListItem__label,
+.RootlistItemPlaylist__text-wrapper,
+.GlueSectionDivider__title,
+.Card__info-subtitle-description
+{
+  font-family: 'Bahnschrift', sans-serif;
+}
+
+.GlueSectionDivider__title {
+  text-transform: uppercase;
+}
+
+.Card__info-subtitle-metadata {
+  color: var(--modspotify_my_blue);
+}
