@@ -1,6 +1,6 @@
 # https://github.com/spicycode/ze-best-zsh-config
 
-ZSH_CONFIG=~/Dotfiles/config/zsh
+ZSH_CONFIG=$HOME/Dotfiles/config/zsh
 
 source $ZSH_CONFIG/setops.zsh
 source $ZSH_CONFIG/exports.zsh

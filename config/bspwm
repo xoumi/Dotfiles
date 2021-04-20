@@ -1,10 +1,11 @@
 #! /bin/sh
 
+polkit-gnome-authentication-agent-1 &
+picom &
 sxhkd &
-xrandr -s 1920x1080 -r 144
+# xrandr -s 1920x1080 -r 144
 flashfocus -t 200 --no-flash-fullscreen &
 nitrogen --restore
-picom &
 $HOME/Dotfiles/config/polybar/start.sh &
 
 
@@ -24,6 +25,7 @@ bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config pointer_motion_interval 7ms
 
+bspc config external_rules_command "$HOME/Dotfiles/bin/bspwm-external-rules.sh"
 bspc rule -a Alacritty state=pseudo_tiled
 bspc rule -a Firefox desktop='^2' follow=on
 bspc rule -a Pavucontrol state=floating manage=on layer=above follow=off
@@ -32,3 +34,4 @@ bspc rule -a Blueman-manager state=floating manage=on layer=above follow=off
 bspc rule -a Thunar state=floating manage=on layer=normal follow=on
 bspc rule -a discord desktop='^3' follow=off
 bspc rule -a float state=floating
+bspc rule -a Spotify desktop='^3' follow=off

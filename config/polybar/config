@@ -2,8 +2,8 @@
 foreground = #fff
 background-alt = #444
 background = #212b35
-primary = #a7e3ff
-secondary = #C7D3FF
+primary = #fc9ccb
+secondary = #68d4f7
 alert = #938cfc
 spotify = #91F2B5
 yt = #f05151
@@ -45,7 +45,7 @@ background = ${colors.spotify}
 [bar/yt]
 inherit=bar/common
 width = 220
-offset-x=280
+offset-x=260
 modules-left = yt
 background = ${colors.yt}
 

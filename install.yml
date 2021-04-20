@@ -22,6 +22,7 @@
     ~/.config/rofi/: config/rofi/*
     ~/.config/spicetify/Themes/Skies: config/spicetify/*
     ~/.config/user-dirs.dirs: config/userdirs
+    $FIREFOX_DIR/chrome: config/firefox/flyingfox/*
 
 - create:
   - ~/.cache/wget/history

@@ -44,9 +44,9 @@ super + @space
     rofi -show run
 
 XF86AudioRaiseVolume
-    pamixer -i 5
+    pamixer -i 2
 XF86AudioLowerVolume
-    pamixer -d 5
+    pamixer -d 2
 XF86AudioMute
     pamixer -t
 XF86AudioPlay

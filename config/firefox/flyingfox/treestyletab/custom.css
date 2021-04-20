@@ -1,0 +1,216 @@
+:root{
+  --tab-border-radius: 0px; /* border radius of tabs */
+  --animation-duration: 100ms; /* duration of different animations [0s: off] */
+  --spacing: 0px; /* spacing between tabs. [<15px: compact tabs] */
+}
+
+:root{
+  --dark-0: #151d28;
+  --dark-base: #192330;
+  --dark-1: #223042;
+  --dark-2: #2a3c52;
+  --dark-3: #31455e;
+  --dark-4: #384f6b;
+
+  --light-0: #d9e0e8;
+  --light-base: #afc0d5;
+  --light-1: #a1b5ce;
+  --light-2: #94abc7;
+  --light-3: #87a0c0;
+  --light-4: #7995b9;
+
+  --accent: #63cdcf;
+}
+
+:root.incognito {
+  --dark-0: #151d28;
+  --dark-base: #20103c !important;
+  --dark-1: #271447;
+  --dark-2: #321c5d;
+  --dark-3: #422778;
+  --dark-4: #512f95;
+
+  --light-0: #fe7676bc;
+  --light-base: #f86288bc;
+  --light-1: #f05294bc;
+  --light-2: #ec4a9bbc;
+  --light-3: #eb3fa3bc;
+  --light-4: #ea38b5bc;
+
+  --accent: #e9207e; 
+}
+
+:root, #background{
+  background:  var(--dark-base);
+}
+
+#all-tabs{
+ margin: 0px 0px;
+}
+
+tab-item:not(collapsed) {
+  margin-top: var(--spacing);
+  border-radius: var(--tab-border-radius);
+  border: none !important;
+  padding-top: 9px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+}
+
+
+tab-item tab-favicon{
+  left: 0;
+  filter: grayscale(50%) opacity(80%);
+  transition: left calc(var(--animation-duration)*2) ease-in-out;
+}
+
+tab-item[data-child-ids] .twisty{
+  margin-right: 0px;
+}
+
+.highlighter {
+  display: none !important;
+}
+
+tab-item .label {
+  color: var(--light-2) !important;
+  padding-bottom: 2px;
+}
+
+
+tab-item .twisty:before{
+ background: var(--light-3) !important;
+}
+
+tab-item.active .label {
+  color: var(--light-0) !important;
+}
+
+
+:root tab-item.active .twisty:before{
+ background: var(--light-2) !important;
+}
+
+tab-item.active {
+  background: var(--dark-3) !important;
+}
+
+tab-item:not(active):hover {
+  background: var(--dark-1);
+}
+
+tab-item:not(:hover) tab-closebox {
+  opacity: 0;
+
+}
+
+tab-item tab-closebox {
+  position: absolute;
+  right: 5px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--light-4);
+  transition: all var(--animation-duration) ease-in-out;
+  opacity: 1;
+}
+
+.sound-button:after {
+  background: var(--light-3) !important;
+  margin-top: 0px;
+  content: '';
+}
+
+.sound-button {
+  margin-top: -3px;
+  margin-right: 10px;
+  padding: 0 5px;
+}
+
+.counter{
+  color: var(--dark-base) !important;
+  background: var(--accent) !important;
+  border-radius: 7px;
+  margin: 2px 2px 0px 0px;
+  padding: 0 4px;
+}
+
+.counter:before, .counter:after{ content: ""}
+
+
+/********RIGHT CONTENT TAB(hover)*************/
+
+:root.right tab-item tab-favicon {
+  transform: scale(100%) translateX(8px);
+  order: 1000;
+  filter: grayscale(50%);
+  transition: all 0.2s ease-in-out;
+  margin-right: 0px;
+}
+
+
+:root.right tab-item:hover tab-favicon,
+:root.right tab-favicon {
+  transform: translateX(40px);
+}
+
+:root.right tab-item:hover tab-favicon {
+  margin-left: -15px;
+}
+
+/***********************************/
+
+.tab
+  .favicon
+  .favicon-default::before {
+  filter: invert(88%) sepia(50%) saturate(1339%) hue-rotate(176deg) brightness(82%) contrast(95%);
+}
+
+.tab[data-current-favicon-uri="undefined"]
+  .favicon
+  .favicon-default::before{
+  background: url("chrome://branding/content/identity-icons-brand.svg") no-repeat center !important;
+  mask: none !important;
+}
+
+/***********NEW TAB BUTTON**********/
+
+.newtab-button-box {
+  border: none !important;
+  margin: 0 50px;
+}
+
+.newtab-button {
+  border: none !important;
+  border-radius: 8px;
+  padding: 8px 0 !important;
+  margin: 0 5px;
+}
+
+.newtab-button::before{
+ background: var(--light-3) !important;
+}
+
+.newtab-action-selector-anchor {
+  border: none !important;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.newtab-button:hover {
+  background: var(--dark-1);
+}
+
+/**********PINNED TAB***************/
+
+tab-item.pinned {
+  margin: 4px;
+  padding: 5px !important;
+  transition   : all 0.1s ease-in-out;
+}
+
+/***********************************/
+
+#all-tabs {
+  border: none !important;
+}

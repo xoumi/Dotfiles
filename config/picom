@@ -47,6 +47,7 @@ blur: {
 blur-background-exclude = [
   "window_type = 'dock'", 
   "window_type = 'desktop'",
-  "class_g = 'Rofi'"
+  "class_g = 'Rofi'",
+  "class_g = 'firefox' && argb",
 ];
 
