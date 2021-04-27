@@ -5,6 +5,9 @@ alias p="pnpm"
 alias cc="clear"
 alias install="sudo pacman -S"
 alias fire="cd $FIREFOX_DIR" 
+alias t="todo.sh"
+alias tl="todo.sh list"
+alias ta="todo.sh add"
 
 # exa is an alternative to ls
 alias ls='exa -1'

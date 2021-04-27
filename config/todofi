@@ -1,0 +1,8 @@
+COLOR_TITLE="#00FF00"
+COLOR_SHORTCUT="#B4CCF0"
+COLOR_INFO="#FFFFFF"
+COLOR_EXAMPLE="#0000CC"
+
+MARKUP_CONTEXT='<span fgcolor="lightSteelBlue">\1<\/span>'
+
+EDITOR='code'

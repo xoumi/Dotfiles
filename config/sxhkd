@@ -73,5 +73,8 @@ super + shift + x
 super + shift + c
     $HOME/Dotfiles/config/rofi/scripts/config.sh
 
+super + z
+    $HOME/Dotfiles/bin/todofi.sh
+
 super + period
     $HOME/Dotfiles/config/rofi/scripts/emoji-picker.sh

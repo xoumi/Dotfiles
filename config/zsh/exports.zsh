@@ -3,11 +3,9 @@ export EDITOR='nvim'
 export STORAGE=$HOME/str
 export STARSHIP_CONFIG=$ZSH_CONFIG/starship.toml
 export DOT_DIR=$HOME/Dotfiles/config/
-path=(
-    $path
-    $HOME/Dotfiles/bin
-    $HOME/.local/bin
-)
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$PATH:$HOME/Dotfiles/bin:$HOME/.local/bin
 
 export HYPHEN_INSENSITIVE="true"
 export COMPLETION_WAITING_DOTS="true"

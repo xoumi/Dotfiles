@@ -20,6 +20,8 @@
     ~/.config/polybar/: config/polybar/*
     ~/.config/sxhkd/sxhkdrc: config/sxhkd
     ~/.config/rofi/: config/rofi/*
+    ~/.config/todo/config: config/todo
+    ~/.config/todo/todofi: config/todofi
     ~/.config/spicetify/Themes/Skies: config/spicetify/*
     ~/.config/user-dirs.dirs: config/userdirs
     $FIREFOX_DIR/chrome: config/firefox/flyingfox/*
@@ -27,6 +29,7 @@
 - create:
   - ~/.cache/wget/history
   - ~/.cache/zsh/history
+  - ~/.cache/todo
 
 - yay:
   - zsh

@@ -1,11 +1,11 @@
 #! /bin/sh
 
 polkit-gnome-authentication-agent-1 &
+xrandr -s 1920x1080 -r 144
+nitrogen --restore
 picom &
 sxhkd &
-# xrandr -s 1920x1080 -r 144
 flashfocus -t 200 --no-flash-fullscreen &
-nitrogen --restore
 $HOME/Dotfiles/config/polybar/start.sh &
 
 

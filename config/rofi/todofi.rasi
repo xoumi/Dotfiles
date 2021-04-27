@@ -2,12 +2,12 @@
   background-color: @transparent;
   border-color: transparent;
   text-color: #fff;
-  width: 150px;
+  width: 350px;
   font: "Bahnschrift 11";
   primary: #8495AF;
-  secondary: #212b35;
+  secondary: #2c4763;
   bg: #212b35;
-  bgl: #1a222a;
+  bgl: #273645;
   myHigh: bold italic;
   transparent: #0000;
 }

@@ -1,9 +1,9 @@
 [colors]
-foreground = #fff
+foreground = #8495AF
 background-alt = #444
 background = #212b35
-primary = #fc9ccb
-secondary = #68d4f7
+primary = #C0CDDF
+secondary = #C0CDDF
 alert = #938cfc
 spotify = #91F2B5
 yt = #f05151
