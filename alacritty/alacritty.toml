@@ -1,0 +1,17 @@
+import = [
+  "~/.config/alacritty/mellow.toml"
+]
+
+[window]
+padding = { x = 20, y = 20 }
+dynamic_padding = true
+opacity = 0.85
+
+[font]
+size = 10.0
+offset = { x = 0, y = 2 }
+glyph_offset = { x = 0, y = 1 }
+builtin_box_drawing = true
+
+[font.normal]
+family = "JetbrainsMono Nerd Font"

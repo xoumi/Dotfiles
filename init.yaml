@@ -5,6 +5,8 @@
       create: true
     ~/.config/tmux:
       create: true
+    ~/.config/alacritty:
+      create: true
     ~/.config/zsh:
       create: true
       exclude: [zsh/init.zsh]
