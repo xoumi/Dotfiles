@@ -1,0 +1,15 @@
+- link:
+    ~/.config/nvim:
+      create: true
+    ~/.config/hypr:
+      create: true
+    ~/.config/tmux:
+      create: true
+    ~/.config/zsh:
+      create: true
+      exclude: [zsh/init.zsh]
+    ~/.zshrc:
+      create: true
+      clean: true
+      force: true
+      path: zsh/init.zsh
