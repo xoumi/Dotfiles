@@ -2,6 +2,7 @@ alias n=nvim
 alias cc=clear
 alias cat=bat
 alias install="sudo pacman -S"
+alias lg=lazygit
 
 alias rm="rm -rf"
 alias :q="exit"

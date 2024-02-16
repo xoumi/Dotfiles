@@ -5,6 +5,7 @@ format = """
 $git_branch\
 $git_state\
 $git_status\
+$nodejs\
 $character
 """
 
@@ -12,6 +13,10 @@ $character
 success_symbol = "[ »](bold green)"
 vicmd_symbol= "[ «](bold blue)"
 error_symbol= "[ »](bold red)"
+
+[nodejs]
+format = " [$symbol$version]($style) "
+version_format = '${major}'
 
 [package]
 disabled = true
