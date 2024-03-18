@@ -7,6 +7,7 @@ o.shiftwidth = 2
 o.softtabstop = -1
 o.smarttab = true
 o.autoindent = true
+vim.wo.foldnestmax = 1
 
 -- Generic
 o.termguicolors = true
@@ -25,7 +26,7 @@ g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
 -- Folds for ufo
-o.foldcolumn = '1'
+o.foldcolumn = '0'
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true

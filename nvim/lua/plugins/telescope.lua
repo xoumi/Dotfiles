@@ -3,6 +3,14 @@ return {
     "nvim-telescope/telescope-ui-select.nvim",
   },
   {
+    "danielfalk/smart-open.nvim",
+    branch = "0.2.x",
+    config = function()
+      require("telescope").load_extension("smart_open")
+    end,
+    dependencies = { "kkharji/sqlite.lua" },
+  },
+  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = {
@@ -30,8 +38,11 @@ return {
       })
 
       local set = vim.keymap.set
-      set("n", "<leader><leader>", builtin.find_files, {})
+      set("n", "<leader><leader>", function()
+        require("telescope").extensions.smart_open.smart_open()
+      end, {})
       set("n", "<leader>fg", builtin.live_grep, {})
+      set("n", "<leader>fb", builtin.buffers, {})
       set("n", "<leader>fc", builtin.commands, {})
       set("n", "<leader>uc", builtin.colorscheme, {})
       set("n", "<leader>fh", builtin.help_tags, {})
