@@ -5,6 +5,8 @@ export SAVEHIST=1000
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export STARSHIP_CONFIG=~/.config/zsh/starship.toml
 export NVM_DIR="$HOME/.config/nvm"
+export DOT_DIR="$HOME/dot"
+export PATH="$PATH:$DOT_DIR/bin"
 
 # Use bat to colorize man
 export MANPAGER="zsh -c 'col -bx | bat -l man -p'"

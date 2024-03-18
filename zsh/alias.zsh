@@ -15,6 +15,9 @@ alias ls="eza --icons -1"
 alias ll="eza --icons -l --no-permissions --no-user --git"
 alias la="eza --icons -la --no-permissions --no-user --git"
 
+alias tn="project.sh"
+alias ta="tmux attach"
+
 alias nr="npm run"
 alias login="aws codeartifact login --tool npm --repository livspace_npm_group --domain livspace-private"
 
