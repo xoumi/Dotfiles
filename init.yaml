@@ -8,20 +8,13 @@
 
 - link:
     ~/.config/nvim:
-      create: true
+    ~/.config/ags:
     ~/.config/hypr:
       if: '[ `uname` = Linux ]'
-      create: true
     ~/.config/tmux:
-      create: true
     ~/.config/alacritty:
       if: '[ `uname` = Linux ]'
-      create: true
     ~/.config/zsh:
-      create: true
       exclude: [zsh/init.zsh]
     ~/.zshrc:
-      create: true
-      clean: true
-      force: true
       path: zsh/init.zsh
