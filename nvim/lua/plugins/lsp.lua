@@ -32,6 +32,7 @@ return {
         "tailwindcss",
         "tsserver",
         "eslint",
+        "volar"
       },
     },
   },
@@ -47,6 +48,7 @@ return {
       lspconfig.tsserver.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
+      lspconfig.volar.setup({ capabilities = capabilities })
 
       local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 
