@@ -12,7 +12,14 @@ return {
     require("nvim-tree").setup({
       update_focused_file = {
         enable = true,
-      },
+      };
+
+      renderer = {
+        icons = {
+          git_placement = 'signcolumn'
+        }
+      };
+
       on_attach = function(bufnr)
         local api = require "nvim-tree.api"
         local set = vim.keymap.set

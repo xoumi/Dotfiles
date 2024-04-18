@@ -17,6 +17,18 @@ return {
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
 
+
+      function Merge(t1, t2)
+        for k, v in pairs(t2) do
+          if (type(v) == "table") and (type(t1[k] or false) == "table") then
+            Merge(t1[k], t2[k])
+          else
+            t1[k] = v
+          end
+        end
+        return t1
+      end
+
       cmp.setup({
         snippet = {
           expand = function(args)
@@ -25,9 +37,16 @@ return {
         },
 
         window = {
-          completion = cmp.config.window.bordered(),
+          completion = Merge(
+            cmp.config.window.bordered(),
+            {
+              side_padding = 1,
+              scrollbar = false,
+            }
+          ),
           documentation = cmp.config.window.bordered(),
         },
+
 
         enabled = function()
           -- Disable in comments section

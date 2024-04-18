@@ -49,6 +49,19 @@ return {
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.volar.setup({ capabilities = capabilities })
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        settings = {
+          gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+              unusedparams = true
+            }
+          }
+        }
+      })
+      lspconfig.golangci_lint_ls.setup({ capabilities = capabilities })
 
       local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 

@@ -20,6 +20,8 @@ o.relativenumber = true
 o.number = true
 o.cursorline = false
 o.winblend = 0
+o.conceallevel = 2
+o.concealcursor = 'c'
 
 -- Disable for nvim-tree
 g.loaded_netrw = 1

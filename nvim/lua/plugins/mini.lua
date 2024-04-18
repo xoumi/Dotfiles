@@ -13,14 +13,6 @@ return {
   { "echasnovski/mini.surround", version = false, config = true },
   { 'echasnovski/mini.comment', version = false, config = true },
   {
-    "echasnovski/mini.starter",
-    version = false,
-    opts = {
-      footer = "",
-      evaluate_single = true,
-    },
-  },
-  {
     "j-hui/fidget.nvim",
     opts = {
       progress = {

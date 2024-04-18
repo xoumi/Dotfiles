@@ -10,6 +10,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local custom_theme = require("lualine.themes.mellow")
+      local git_blame = require("gitblame")
       custom_theme.normal.c.bg = "NONE"
       custom_theme.inactive.c.bg = "NONE"
 
@@ -17,8 +18,8 @@ return {
         options = {
           icons_enabled = true,
           theme = custom_theme,
-          section_separators = { left = '', right = '' },
-          component_separators = { left = '', right = ''},
+          section_separators = { left = "", right = "" },
+          component_separators = { left = "", right = "" },
           -- component_separators = { left = "", right = "" },
           disabled_filetypes = {
             statusline = { "NvimTree" },
@@ -45,10 +46,18 @@ return {
           lualine_b = {
             { "branch", icon = "" },
             "diagnostics",
-            "filename",
           },
-          lualine_c = { },
-          lualine_x = { "searchcount", "location" },
+          lualine_c = {
+            {
+              "filename",
+              path = 1
+            }
+          },
+          lualine_x = {
+            { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
+            "searchcount",
+            "location",
+          },
           lualine_y = {
             { "filetype", colored = false, padding = 2 },
           },
