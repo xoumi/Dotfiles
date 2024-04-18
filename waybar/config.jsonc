@@ -1,0 +1,58 @@
+{
+  "layer": "top",
+  "reload_style_on_change": true,
+  "position": "top",
+  "margin": "10px 10px 0",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["image#album-art", "mpris"],
+  "modules-right": ["network#icon", "network#name", "pulseaudio#icon", "pulseaudio#volume", "clock"],
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a • %d %b • %H:%M}",
+  },
+
+  "pulseaudio#icon": {
+    "format": "  ",
+    "format-bluetooth": "󰂰  ",
+    "format-muted": "󰝟  ",
+    "on-click": "pavucontrol",
+  },
+
+  "pulseaudio#volume": {
+    "format": "{volume}",
+  },
+
+  "network#name": {
+    "format": "{essid}",
+    "format-disconnected": "", //An empty format will hide the module.
+    "max-length": 50,
+  },
+  "network#icon": {
+    "format": "{icon}",
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "format-wifi": "{icon}",
+    "format-disconnected": "󰤭 ", //An empty format will hide the module.
+  },
+
+  "mpris": {
+    "format": "{title} • {artist}",
+    "format-paused": "PAUSED {title} • {artist}",
+  },
+
+  "image#album-art": {
+    "exec": "~/str/doc/dot/bin/albumArt.sh",
+    "size": 28,
+    "interval": 5,
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "TERM",
+      "2": "WEB",
+      "3": "MEDIA",
+      "4": "MISC",
+    },
+  },
+}

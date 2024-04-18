@@ -1,5 +1,5 @@
 import = [
-  "~/.config/alacritty/mellow.toml"
+  "~/.cache/wal/alacritty.toml"
 ]
 
 [window]
@@ -14,4 +14,8 @@ glyph_offset = { x = 0, y = 1 }
 builtin_box_drawing = true
 
 [font.normal]
+family = "JetbrainsMono Nerd Font"
+[font.italic]
+family = "JetbrainsMono Nerd Font"
+[font.bold]
 family = "JetbrainsMono Nerd Font"

@@ -1,0 +1,89 @@
+@import url("/home/soma/.cache/wal/gtk3.css");
+
+* {
+  font-family: JetBrainsMono NerdFont, Noto Sans CJK;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @color4;
+}
+
+#clock {
+  background: @color6;
+  color: @background;
+  margin-left: .5rem;
+  padding: 0 0.75rem;
+  border: 2px solid rgba(0, 0, 0, .5);
+}
+
+#mpris {
+  padding: 0 1rem;
+  background: rgba(0, 0, 0, .8);
+}
+
+#pulseaudio {
+  color: @background;
+}
+
+#pulseaudio.icon {
+  background: @color1;
+  border-top: 2px solid rgba(0, 0, 0, .5);
+  border-left: 2px solid rgba(0, 0, 0, .5);
+  border-bottom: 2px solid rgba(0, 0, 0, .5);
+  padding-left: 0.5rem;
+}
+#pulseaudio.volume {
+  background: @color6;
+  border-top: 2px solid rgba(0, 0, 0, .5);
+  border-right: 2px solid rgba(0, 0, 0, .5);
+  border-bottom: 2px solid rgba(0, 0, 0, .5);
+  padding: 0 0.75rem;
+}
+
+#network {
+  color: @background;
+}
+
+#network.icon {
+  background: @color1;
+  padding: 0 0.75rem;
+  border-top: 2px solid rgba(0, 0, 0, .5);
+  border-left: 2px solid rgba(0, 0, 0, .5);
+  border-bottom: 2px solid rgba(0, 0, 0, .5);
+}
+
+#network.name {
+  background: @color6;
+  padding: 0 0.75rem;
+  margin-right: .5rem;
+  border-top: 2px solid rgba(0, 0, 0, .5);
+  border-right: 2px solid rgba(0, 0, 0, .5);
+  border-bottom: 2px solid rgba(0, 0, 0, .5);
+}
+
+#workspaces button {
+  color: @color5;
+  background: @background;
+  border-radius: 0;
+  padding: 0 0.75rem;
+  transition-property: background, color;
+  transition-duration: 0.25s;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+#workspaces button.empty {
+  color: @color1;
+}
+
+#workspaces button.active {
+  color: @background;
+}
+
+#workspaces button.visible {
+  color: @background;
+  background: @color1;
+  border: 2px solid rgba(0, 0, 0, .5);
+}
