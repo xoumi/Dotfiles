@@ -3,8 +3,6 @@ add_newline = true
 format = """
 [$directory](fg:yellow underline)\
 $git_branch\
-$git_state\
-$git_status\
 $nodejs\
 $character
 """
