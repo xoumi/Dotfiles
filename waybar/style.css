@@ -84,6 +84,6 @@ window#waybar {
 
 #workspaces button.visible {
   color: @background;
-  background: @color1;
+  background: @color2;
   border: 2px solid rgba(0, 0, 0, .5);
 }

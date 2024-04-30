@@ -1,0 +1,12 @@
+* {{
+  primary: {color1};
+  secondary: {color2};
+  foreground: {foreground};
+  background: rgba({background.rgb}, 0.5);
+  background-dark: rgba({background.rgb}, 0.95);
+  rounded: 8px;
+}}
+
+inputbar {{
+  background-image: url("{wallpaper}", width);
+}}

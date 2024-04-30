@@ -8,13 +8,24 @@
 
 - link:
     ~/.config/nvim:
-    ~/.config/ags:
+    ~/.config/wal/templates:
+      path: pywal
     ~/.config/hypr:
       if: '[ `uname` = Linux ]'
     ~/.config/tmux:
+    ~/.config/rofi:
+      if: '[ `uname` = Linux ]'
     ~/.config/alacritty:
       if: '[ `uname` = Linux ]'
     ~/.config/zsh:
       exclude: [zsh/init.zsh]
     ~/.zshrc:
       path: zsh/init.zsh
+    ~/.config/waybar:
+      if: '[ `uname` = Linux ]'
+
+- paru:
+  - celluloid
+  - rofi-wayland
+  - tmux
+  - neovim

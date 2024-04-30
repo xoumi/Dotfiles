@@ -16,8 +16,11 @@ return {
 
       renderer = {
         icons = {
-          git_placement = 'signcolumn'
-        }
+          git_placement = 'signcolumn',
+          padding = '  '
+        },
+        root_folder_label = false,
+        highlight_opened_files = "all"
       };
 
       on_attach = function(bufnr)
@@ -41,6 +44,7 @@ return {
     vim.keymap.set('n', "<C-b>", "<Cmd>NvimTreeOpen<CR>", { noremap = true, silent = true, nowait = true })
     vim.keymap.set('n', "<C-e>", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true, nowait = true })
 
+    -- Kill nvim-tree if it's the last open window
     vim.api.nvim_create_autocmd("QuitPre", {
       callback = function()
         local invalid_win = {}

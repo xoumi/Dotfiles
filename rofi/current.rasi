@@ -1,0 +1,83 @@
+@import "/home/soma/.cache/wal/rofi"
+
+window {
+  transparency:     "real";
+  background-color: transparent;
+  width: 20%;
+}
+
+mainbox {
+  background-color: transparent;
+  spacing: 0.5em;
+  children: [inputbar, message, listview];
+}
+
+inputbar {
+  padding: 5em 10em 1em;
+  spacing: 0;
+  border: 4;
+  border-color: @background;
+  border-radius: @rounded;
+  orientation: vertical;
+  children: [ "entry", "mode-switcher" ];
+}
+
+entry {
+  background-color: @background;
+  text-color: @foreground;
+  padding: 0.5em 1em;
+  border-radius: @rounded;
+}
+
+listview {
+  background-color: @background-dark;
+  text-color: @foreground;
+  padding: 0.5em 1em;
+  border-radius: @rounded;
+  lines: 5;
+}
+
+element {
+  background-color: transparent;
+  children: [element-text];
+  text-color: @foreground;
+  padding: 0.25em 0;
+}
+
+element selected {
+  text-color: @primary;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  highlight: underline;
+}
+
+mode-switcher {
+  margin: 3em 0 0 0;
+  spacing: 1em;
+  background-color: transparent;
+}
+
+button {
+  font: "JetbrainsMono NerdFont 10";
+  background-color: @background;
+  text-color: @foreground;
+  border-radius: @rounded;
+  text-transform: uppercase bold;
+  cursor: pointer;
+  padding: 0.5em 1em;
+}
+
+button selected {
+  text-color: @primary;
+}
+
+message {
+  background-color: @background-dark;
+  text-color: @foreground;
+  padding: 1em;
+  border: 2px;
+}
+

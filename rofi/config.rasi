@@ -1,0 +1,23 @@
+@import "keys"
+configuration {
+  // System
+  modes: [drun, run];
+  matching: "normal";
+  scroll-method: 1;
+  steal-focus: true;
+  terminal: "alacritty";
+
+  // UI
+  font: "JetbrainsMono NerdFont 12";
+  fixed-num-lines: true;
+  show-icons: false;
+  drun-display-format: "{name}";
+  sidebar-mode: true;
+
+    filebrowser {
+    directories-first: true;
+    sorting-method:    "name";
+  }
+}
+
+@theme "current"

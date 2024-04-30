@@ -1,15 +1,14 @@
 {
   "layer": "top",
   "reload_style_on_change": true,
-  "position": "top",
-  "margin": "10px 10px 0",
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["image#album-art", "mpris"],
+  "position": "bottom",
+  "output": "DP-2",
+  "margin": "0px 10px 10px",
+  "modules-left": ["image#album-art", "mpris"],
   "modules-right": ["network#icon", "network#name", "pulseaudio#icon", "pulseaudio#volume", "clock"],
 
   "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%a • %d %b • %H:%M}",
+    "format": "{:%a • %d %b • %I:%M %p}",
   },
 
   "pulseaudio#icon": {
