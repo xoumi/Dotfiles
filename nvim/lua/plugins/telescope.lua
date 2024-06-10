@@ -38,22 +38,11 @@ return {
         },
       })
 
-      local telescope_last = 0
-      function telescope_resume()
-        if telescope_last == 0 then
-          telescope_last = 1
-          builtin.live_grep()
-        else
-          builtin.resume()
-        end
-      end
-
-
       local set = vim.keymap.set
       set("n", "<leader><leader>", function()
         require("telescope").extensions.smart_open.smart_open()
       end, {})
-      set("n", "<leader>fg", telescope_resume, {})
+      set("n", "<leader>fg", builtin.live_grep, {})
       set("n", "<leader>fb", builtin.buffers, {})
       set("n", "<leader>fc", builtin.commands, {})
       set("n", "<leader>uc", builtin.colorscheme, {})

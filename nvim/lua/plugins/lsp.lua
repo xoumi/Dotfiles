@@ -38,6 +38,22 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          { "SmiteshP/nvim-navic", opts = { lsp = { auto_attach = true } } },
+          "MunifTanjim/nui.nvim"
+        },
+        opts = {
+          lsp = { auto_attach = true },
+          window = {
+            border = "rounded",
+            sections = { right = { preview = "always" } },
+          }
+        }
+      },
+    },
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()

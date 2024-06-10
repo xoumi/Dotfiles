@@ -19,8 +19,7 @@ return {
           git_placement = 'signcolumn',
           padding = '  '
         },
-        root_folder_label = false,
-        highlight_opened_files = "all"
+        root_folder_label = false
       };
 
       on_attach = function(bufnr)

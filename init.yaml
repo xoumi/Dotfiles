@@ -8,6 +8,8 @@
 
 - link:
     ~/.config/nvim:
+    ~/.config/ags:
+      if: '[ `uname` = Linux ]'
     ~/.config/wal/templates:
       path: pywal
     ~/.config/hypr:

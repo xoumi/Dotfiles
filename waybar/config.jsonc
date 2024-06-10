@@ -4,13 +4,17 @@
   "position": "bottom",
   "output": "DP-2",
   "margin": "0px 10px 10px",
-  "modules-left": ["image#album-art", "mpris"],
+  "modules-left": ["tray", "image#album-art", "mpris"],
   "modules-right": ["network#icon", "network#name", "pulseaudio#icon", "pulseaudio#volume", "clock"],
 
   "clock": {
     "format": "{:%a • %d %b • %I:%M %p}",
   },
 
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
   "pulseaudio#icon": {
     "format": "  ",
     "format-bluetooth": "󰂰  ",

@@ -11,13 +11,14 @@ set("n", "<C-s>", "<Cmd>w<cr>", opts("select all"))
 set("n", "U", "<C-r>", opts("redo"))
 set("n", "<Esc>", "<cmd>nohlsearch<cr>", opts("redo"))
 set("n", "<leader>ul", "<cmd>Lazy<cr>", opts("Lazy"))
-set("n", "<leader>h", "<cmd>bprev<cr>", opts("Lazy"))
-set("n", "<leader>l", "<cmd>bnext<cr>", opts("Lazy"))
+set("n", "<leader>h", "<cmd>BufferLineCyclePrev<cr>", opts("Previous buffer"))
+set("n", "<leader>l", "<cmd>BufferLineCycleNext<cr>", opts("Next buffer"))
+set("n", "<leader>n", "<cmd>Navbuddy<cr>", opts("Lazy"))
 
 -- windows
 set("n", "sv", "<Cmd>vsplit<CR>", opts("split vertical"))
 set("n", "ss", "<Cmd>split<CR>", opts("split horizontal"))
-set("n", "<C-w>", "<cmd>q<cr>", opts("close window"))
+set("n", "<C-w>", "<cmd>close<cr>", opts("close window"))
 
 -- motions
 set("n", "H", "^", opts("start of line"))

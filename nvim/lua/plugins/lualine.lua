@@ -10,19 +10,28 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local custom_theme = require("lualine.themes.mellow")
+      local navic = require("nvim-navic")
       local git_blame = require("gitblame")
       custom_theme.normal.c.bg = "NONE"
       custom_theme.inactive.c.bg = "NONE"
+
+      local project_root = {
+        function()
+          return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+        end,
+        icon = ""
+      }
+      local MyNvimTree = { sections = { lualine_c = { project_root } }, filetypes = { 'NvimTree' } }
 
       require("lualine").setup({
         options = {
           icons_enabled = true,
           theme = custom_theme,
+          -- component_separators = { left = '', right = ''},
+          -- section_separators = { left = '', right = ''},
           section_separators = { left = "", right = "" },
-          component_separators = { left = "", right = "" },
-          -- component_separators = { left = "", right = "" },
+          component_separators = { left = " | ", right = " | " },
           disabled_filetypes = {
-            statusline = { "NvimTree" },
             winbar = {},
           },
           ignore_focus = {},
@@ -34,6 +43,7 @@ return {
             winbar = 1000,
           },
         },
+        extensions = { MyNvimTree },
         sections = {
           lualine_a = {
             {
@@ -54,14 +64,13 @@ return {
             }
           },
           lualine_x = {
-            { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
             "searchcount",
-            "location",
+            { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
           },
           lualine_y = {
             { "filetype", colored = false, padding = 2 },
           },
-          lualine_z = {},
+          lualine_z = { "location" }
         },
         inactive_sections = {
           lualine_a = {},
@@ -73,7 +82,18 @@ return {
           lualine_y = {},
           lualine_z = { "filetype" },
         },
-        winbar = {},
+        -- winbar = {
+        --   lualine_c = {
+        --     {
+        --       function()
+        --         return navic.get_location()
+        --       end,
+        --       cond = function()
+        --         return navic.is_available()
+        --       end
+        --     },
+        --   }
+        -- },
         inactive_winbar = {},
       })
     end,
