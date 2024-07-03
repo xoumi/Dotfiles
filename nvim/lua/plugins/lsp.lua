@@ -61,7 +61,15 @@ return {
         dynamicRegistration = false,
         lineFoldingOnly = true,
       }
-      lspconfig.tsserver.setup({ capabilities = capabilities })
+      lspconfig.tsserver.setup({
+        capabilities = capabilities,
+        settings = {
+          preferences = {
+            importModuleSpecifier = "non-relative"
+          }
+        }
+      })
+      lspconfig.terraformls.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.volar.setup({ capabilities = capabilities })

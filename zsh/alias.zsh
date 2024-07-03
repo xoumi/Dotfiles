@@ -3,6 +3,10 @@ alias cc=clear
 alias cat=bat
 alias install="sudo pacman -S"
 alias lg=lazygit
+alias nb=netbird
+alias nbu="netbird up"
+alias nbd="netbird down"
+alias nbs="netbird status"
 
 alias rm="rm -rf"
 alias :q="exit"

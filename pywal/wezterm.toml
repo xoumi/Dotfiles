@@ -1,0 +1,36 @@
+[colors]
+ansi = [
+    '{color0}',
+    '{color1}',
+    '{color2}',
+    '{color3}',
+    '{color4}',
+    '{color5}',
+    '{color6}',
+    '{color7}',
+]
+background = '{background}'
+brights = [
+    '{color8}',
+    '{color9}',
+    '{color10}',
+    '{color11}',
+    '{color12}',
+    '{color13}',
+    '{color14}',
+    '{color15}',
+]
+compose_cursor = '#ffb86c'
+cursor_bg = '{cursor}'
+cursor_border = '{cursor}'
+cursor_fg = '{foreground}'
+foreground = '{foreground}'
+scrollbar_thumb = '#44475a'
+selection_bg = 'rgba(0% 0% 0% 50%)'
+selection_fg = 'rgba(0% 0% 0% 0%)'
+
+[metadata]
+aliases = []
+author = 'pywal'
+name = 'pywal'
+origin_url = 'https://github.com/dracula/wezterm'

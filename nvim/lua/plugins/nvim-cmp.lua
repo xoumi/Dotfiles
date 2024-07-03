@@ -6,6 +6,12 @@ return {
   "dcampos/nvim-snippy",
   "dcampos/cmp-snippy",
   {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
+  {
     "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")
@@ -55,7 +61,7 @@ return {
         end,
 
         mapping = cmp.mapping.preset.insert({
-          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-c>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping(
@@ -84,7 +90,10 @@ return {
           ),
         }),
 
-        sources = cmp.config.sources({ { name = "nvim_lsp" } }, { { name = "buffer" } }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "copilot", group_index = 2 },
+        }, { { name = "buffer" } }),
       })
 
       cmp.setup.cmdline(":", {
