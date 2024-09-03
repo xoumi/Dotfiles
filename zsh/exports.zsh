@@ -5,7 +5,7 @@ export SAVEHIST=1000
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export STARSHIP_CONFIG=~/.config/zsh/starship.toml
 export NVM_DIR="$HOME/.config/nvm"
-export DOT_DIR="$MY_HOME/doc/dot"
+export DOT_DIR="$MY_HOME/Documents/Dotfiles"
 export PATH="$PATH:$DOT_DIR/bin"
 
 # Use bat to colorize man

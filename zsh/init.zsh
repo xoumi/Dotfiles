@@ -1,5 +1,5 @@
-MY_HOME=$HOME/str
-ZSH_CONFIG=$MY_HOME/doc/dot/zsh
+MY_HOME=$HOME
+ZSH_CONFIG=$MY_HOME/Documents/Dotfiles/zsh
 
 source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/prompt.zsh
