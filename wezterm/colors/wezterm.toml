@@ -1,0 +1,33 @@
+[colors]
+ansi = [
+    '#0E0F0B',
+    '#7C8176',
+    '#87837C',
+    '#C7A36B',
+    '#7A7D82',
+    '#7E8184',
+    '#8F8E8B',
+    '#cecbc8',
+]
+background = '#0E0F0B'
+brights = [
+    '#908e8c',
+    '#7C8176',
+    '#87837C',
+    '#C7A36B',
+    '#7A7D82',
+    '#7E8184',
+    '#8F8E8B',
+    '#cecbc8',
+]
+compose_cursor = '#ffb86c'
+cursor_bg = '#cecbc8'
+cursor_border = '#cecbc8'
+cursor_fg = '#cecbc8'
+foreground = '#cecbc8'
+scrollbar_thumb = '#44475a'
+selection_bg = 'rgba(0% 0% 0% 50%)'
+selection_fg = 'rgba(0% 0% 0% 0%)'
+
+[metadata]
+name = 'pywal'
