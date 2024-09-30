@@ -11,27 +11,31 @@ vim.wo.foldnestmax = 1
 
 -- Generic
 o.termguicolors = true
-o.signcolumn = 'yes'
+o.signcolumn = "yes"
 o.scrolloff = 15
 o.cmdheight = 0
 o.pumblend = 0
 o.updatetime = 150
-o.relativenumber = true
+o.relativenumber = false
 o.number = true
 o.cursorline = false
 o.winblend = 0
 o.conceallevel = 2
-o.concealcursor = 'c'
+o.concealcursor = "c"
 
 -- Disable for nvim-tree
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
 -- Folds for ufo
-o.foldcolumn = '0'
+o.foldcolumn = "0"
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
+o.fillchars = {
+  fold = '-',
+  eob = ' ',
+}
 
 vim.diagnostic.config({
   virtual_text = false,
@@ -40,3 +44,4 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
+
