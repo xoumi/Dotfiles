@@ -11,6 +11,7 @@ vim.wo.foldnestmax = 1
 
 -- Generic
 o.termguicolors = true
+o.ignorecase = true
 o.signcolumn = "yes"
 o.scrolloff = 15
 o.cmdheight = 0
@@ -22,6 +23,8 @@ o.cursorline = false
 o.winblend = 0
 o.conceallevel = 2
 o.concealcursor = "c"
+o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+o.showmode = false
 
 -- Disable for nvim-tree
 g.loaded_netrw = 1

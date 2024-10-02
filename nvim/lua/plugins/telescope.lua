@@ -28,13 +28,18 @@ return {
       local fb_actions = require("telescope._extensions.file_browser.actions")
 
       telescope.setup({
+        pickers = {
+          buffers = {
+            initial_mode = "normal"
+          }
+        },
 
         extensions = {
           smart_open = {
             match_algorithm = "fzf",
           },
           fzf = {
-            case_mode = "respect_case"
+            case_mode = "ignore_case"
           },
           file_browser = {
             hijack_netrw = true,
@@ -65,8 +70,9 @@ return {
       set("n", "<leader><leader>", function()
         extensions.smart_open.smart_open()
       end, {})
-      set("n", "<leader>g", builtin.live_grep, {})
-      set("n", "<leader>b", ":Telescope file_browser<CR>", {})
+      set("n", "<leader>fg", builtin.live_grep, {})
+      set("n", "<leader>fb", builtin.buffers, {})
+      set("n", "<leader>b", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
       set("n", "<leader>fc", builtin.commands, {})
       set("n", "<leader>fh", builtin.help_tags, {})
     end,

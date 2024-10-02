@@ -9,9 +9,6 @@ return {
       open_fold_hl_timeout = 400,
       preview = {},
       enable_get_fold_virt_text = true,
-      provider_selector = function()
-        return { "treesitter" }
-      end,
       fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate, ctx)
         local newVirtText = {}
 

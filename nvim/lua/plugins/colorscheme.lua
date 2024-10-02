@@ -32,6 +32,7 @@ return {
       hl(0, "NeogitDiffContextHighlight", { fg = c.gray05, bg = "NONE" })
       hl(0, "NeogitDiffAddHighlight", { fg = c.green, bg = "NONE" })
       hl(0, "NeogitDiffDeleteHighlight", { fg = c.red, bg = "NONE" })
+      hl(0, "NoiceMini", { fg = c.fg, bg = "NONE" })
 
       -- Animated indent line
       hl(0, "MiniIndentscopeSymbol", { fg = c.gray05, bg = "NONE" })

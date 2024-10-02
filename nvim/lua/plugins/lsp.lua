@@ -16,10 +16,20 @@ return {
       ensure_installed = {
         "lua_ls",
         "tailwindcss",
-        "ts_ls",
         "eslint",
         "volar",
       },
+    },
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {
+      settings = {
+        tsserver_file_preferences = {
+          importModuleSpecifierPreference = "non-relative"
+        }
+      }
     },
   },
   {
@@ -50,7 +60,6 @@ return {
         "volar",
         "gopls",
         "golangci_lint_ls",
-        "ts_ls",
         "lua_ls",
       }
 
@@ -69,9 +78,11 @@ return {
             },
           },
         },
-        tsserver = {
-          preferences = {
-            importModuleSpecifier = "non-relative",
+        lua_ls = {
+          Lua = {
+            diagnostics = {
+              disable = { "missing-parameters", "missing-fields" },
+            },
           },
         },
       }

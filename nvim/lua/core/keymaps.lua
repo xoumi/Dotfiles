@@ -3,13 +3,11 @@ local opts = function(desc)
   return { noremap = true, silent = true, desc = desc, nowait = true }
 end
 
-set("n", ";", ":", opts(""))
-set("n", "<C-a>", "gg<S-v>G", opts("select all"))
 set("n", "<C-s>", "<Cmd>w<cr>", opts("select all"))
 set("n", "U", "<C-r>", opts("redo"))
 set("n", "<Esc>", "<cmd>nohlsearch<cr>", opts("redo"))
-set("n", "<leader>h", "<cmd>BufferLineCyclePrev<cr>", opts("Previous buffer"))
-set("n", "<leader>l", "<cmd>BufferLineCycleNext<cr>", opts("Next buffer"))
+set("n", "<leader>i", "<C-a>", opts("Increment number"))
+set("n", "<leader>d", "<C-x>", opts("Decrement number"))
 
 -- windows
 set("n", "sv", "<Cmd>vsplit<CR>", opts("split vertical"))
@@ -34,13 +32,8 @@ set("n", "zA", require("ufo").openAllFolds, opts("Open all folds"))
 set("n", "zM", require("ufo").closeAllFolds, opts("close all folds"))
 
 
--- UI
-set("n", "<leader>um", "<cmd>Mason<cr>", { desc = "Mason" })
-set("n", "<leader>ul", "<cmd>Lazy<cr>", opts("Lazy"))
-set("n", "<leader>n", "<cmd>Navbuddy<cr>", opts("Lazy"))
-
-
 -- LSP Functionalities
+set("n", "<leader>n", "<cmd>Navbuddy<cr>", opts("Lazy"))
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function()
@@ -51,3 +44,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code actions"))
   end,
 })
+
+-- UI
+set("n", "<leader>um", "<cmd>Mason<cr>", opts("Mason"))
+set("n", "<leader>ul", "<cmd>Lazy<cr>", opts("Lazy"))
+
+-- Treesj
+set("n", "<leader>m", require('treesj').toggle, opts("Toggle Split"))
+
