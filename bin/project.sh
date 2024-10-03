@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-WORK_DIR=$HOME/str/doc/work
+WORK_DIR=$HOME/Documents/work
 SELECTED_DIR=$(ls $WORK_DIR | fzf-tmux -p)
 
 if [[ ! "$TERM_PROGRAM" = tmux ]]; then

@@ -4,6 +4,7 @@ local g = vim.g
 -- Indentation
 o.expandtab = true
 o.shiftwidth = 2
+o.tabstop = 2
 o.softtabstop = -1
 o.smarttab = true
 o.autoindent = true

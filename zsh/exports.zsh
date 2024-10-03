@@ -18,6 +18,5 @@ export ADBLOCK=1
 
 export KEYTIMEOUT=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=0 zeal
-export BROWSER=/usr/bin/firefox
 export EDITOR='nvim'
 

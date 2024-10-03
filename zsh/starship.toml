@@ -1,7 +1,7 @@
 add_newline = true
 
 format = """
-[$directory](fg:yellow underline)\
+[$directory](fg:green underline)\
 $git_branch\
 $nodejs\
 $character
