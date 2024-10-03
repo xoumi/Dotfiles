@@ -1,27 +1,13 @@
 return {
   {
-    "folke/neodev.nvim",
-    priority = 100,
-    config = function()
-      require("neodev").setup({})
-      local lspconfig = require("lspconfig")
-
-      lspconfig.lua_ls.setup({
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = "Replace",
-            },
-          },
-        },
-      })
-    end,
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {},
   },
   {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-      vim.keymap.set("n", "<leader>um", "<cmd>Mason<cr>", { desc = "Mason" })
     end,
   },
   {
@@ -30,10 +16,20 @@ return {
       ensure_installed = {
         "lua_ls",
         "tailwindcss",
-        "tsserver",
         "eslint",
-        "volar"
+        "volar",
       },
+    },
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {
+      settings = {
+        tsserver_file_preferences = {
+          importModuleSpecifierPreference = "non-relative"
+        }
+      }
     },
   },
   {
@@ -43,49 +39,60 @@ return {
         "SmiteshP/nvim-navbuddy",
         dependencies = {
           { "SmiteshP/nvim-navic", opts = { lsp = { auto_attach = true } } },
-          "MunifTanjim/nui.nvim"
+          "MunifTanjim/nui.nvim",
         },
         opts = {
           lsp = { auto_attach = true },
           window = {
             border = "rounded",
             sections = { right = { preview = "always" } },
-          }
-        }
+          },
+        },
       },
     },
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local language_servers = {
+        "terraformls",
+        "tailwindcss",
+        "eslint",
+        "volar",
+        "gopls",
+        "golangci_lint_ls",
+        "lua_ls",
+      }
+
       capabilities.textDocument.foldingRange = {
         dynamicRegistration = false,
         lineFoldingOnly = true,
       }
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-        settings = {
-          preferences = {
-            importModuleSpecifier = "non-relative"
-          }
-        }
-      })
-      lspconfig.terraformls.setup({ capabilities = capabilities })
-      lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      lspconfig.eslint.setup({ capabilities = capabilities })
-      lspconfig.volar.setup({ capabilities = capabilities })
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        settings = {
+
+      local ls_settings = {
+        gopls = {
           gopls = {
             completeUnimported = true,
             usePlaceholders = true,
             analyses = {
-              unusedparams = true
-            }
-          }
-        }
-      })
-      lspconfig.golangci_lint_ls.setup({ capabilities = capabilities })
+              unusedparams = true,
+            },
+          },
+        },
+        lua_ls = {
+          Lua = {
+            diagnostics = {
+              disable = { "missing-parameters", "missing-fields" },
+            },
+          },
+        },
+      }
+
+      for _, ls in ipairs(language_servers) do
+        lspconfig[ls].setup({
+          capabilities = capabilities,
+          settings = ls_settings[ls],
+        })
+      end
 
       local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 
@@ -96,7 +103,6 @@ return {
       end
 
       vim.api.nvim_create_autocmd("CursorHold", {
-        buffer = bufnr,
         callback = function()
           local opts = {
             focusable = false,
@@ -107,19 +113,6 @@ return {
             scope = "cursor",
           }
           vim.diagnostic.open_float(nil, opts)
-        end,
-      })
-
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-        callback = function(ev)
-          local opts = function(desc)
-            return { buffer = ev.buf, desc = desc }
-          end
-          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("Goto Definition"))
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Show hover"))
-          vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename"))
-          vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code actions"))
         end,
       })
     end,
