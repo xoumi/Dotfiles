@@ -9,6 +9,7 @@
 - link:
     ~/.config/nvim:
     ~/.config/wezterm:
+    ~/.config/lazygit:
     ~/.config/ags:
       if: '[ `uname` = Linux ]'
     ~/.config/wal/templates:

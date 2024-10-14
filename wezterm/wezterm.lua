@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local config = {}
 
 config.font = wezterm.font 'JetBrainsMono NerdFont'
@@ -7,6 +7,8 @@ config.line_height = 1.36
 config.freetype_load_target = "Light"
 config.freetype_render_target = "HorizontalLcd"
 config.enable_tab_bar = false
+config.default_cursor_style = 'SteadyUnderline'
+config.underline_thickness = 3
 config.window_padding = {
   left = 20,
   top = 20,
