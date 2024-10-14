@@ -8,30 +8,24 @@ return {
     dependencies = { "kkharji/sqlite.lua" },
   },
   {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-  },
-  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = {
       "nvim-lua/plenary.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
-        build =
-        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
       },
     },
-    config = function()
+    opts = function()
       local builtin = require("telescope.builtin")
       local telescope = require("telescope")
-      local fb_actions = require("telescope._extensions.file_browser.actions")
 
       telescope.setup({
         pickers = {
           buffers = {
-            initial_mode = "normal"
-          }
+            initial_mode = "normal",
+          },
         },
 
         extensions = {
@@ -39,19 +33,7 @@ return {
             match_algorithm = "fzf",
           },
           fzf = {
-            case_mode = "ignore_case"
-          },
-          file_browser = {
-            hijack_netrw = true,
-            initial_mode = "normal",
-            display_stat = { date = true, size = true, mode = false },
-            git_status = false,
-            mappings = {
-              ["n"] = {
-                ["h"] = fb_actions.goto_parent_dir,
-                ["l"] = "select_default"
-              },
-            },
+            case_mode = "ignore_case",
           },
         },
         defaults = {
@@ -59,10 +41,11 @@ return {
           layout_config = { prompt_position = "top" },
           sorting_strategy = "ascending",
           winblend = 0,
+          prompt_prefix = "   ",
+          selection_caret = " ",
         },
       })
       telescope.load_extension("fzf")
-      telescope.load_extension("file_browser")
 
       local set = vim.keymap.set
       local extensions = telescope.extensions
@@ -72,7 +55,6 @@ return {
       end, {})
       set("n", "<leader>fg", builtin.live_grep, {})
       set("n", "<leader>fb", builtin.buffers, {})
-      set("n", "<leader>b", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
       set("n", "<leader>fc", builtin.commands, {})
       set("n", "<leader>fh", builtin.help_tags, {})
     end,

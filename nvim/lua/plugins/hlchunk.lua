@@ -2,12 +2,20 @@ return {
   "shellRaining/hlchunk.nvim",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
+    local cb = function()
+      local fn = vim.fn
+
+      local function get_color(group, attr)
+        return fn.synIDattr(fn.synIDtrans(fn.hlID("Winseparator")), "fg#")
+      end
+      return get_color()
+    end
+
     require("hlchunk").setup({
       chunk = {
         enable = true,
         style = {
-          -- TODO: Fix color fetching
-          "#444444"
+          { fg = cb() },
         },
         chars = {
           horizontal_line = "─",
@@ -21,7 +29,7 @@ return {
       line_num = {
         enable = false,
         use_treesitter = true,
-        style = {"#aaaaaa"}
+        style = { "#aaaaaa" },
       },
       indent = { enable = false },
       blank = { enable = false },

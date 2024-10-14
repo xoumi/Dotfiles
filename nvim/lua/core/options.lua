@@ -8,6 +8,7 @@ o.tabstop = 2
 o.softtabstop = -1
 o.smarttab = true
 o.autoindent = true
+o.guicursor = "n-v-c:hor50,i:ver20"
 vim.wo.foldnestmax = 1
 
 -- Generic
@@ -39,6 +40,7 @@ o.foldenable = true
 o.fillchars = {
   fold = '-',
   eob = ' ',
+  diff = "╱"
 }
 
 vim.diagnostic.config({
@@ -48,4 +50,3 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
-

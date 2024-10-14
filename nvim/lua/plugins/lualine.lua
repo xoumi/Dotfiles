@@ -9,69 +9,51 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      local custom_theme = require("lualine.themes.mellow")
       local git_blame = require("gitblame")
-      custom_theme.normal.c.bg = "NONE"
-      custom_theme.inactive.c.bg = "NONE"
 
       require("lualine").setup({
         options = {
           icons_enabled = true,
-          theme = custom_theme,
+          theme = "mono",
           component_separators = { left = "│", right = "│" },
           section_separators = { left = "", right = "" },
-          disabled_filetypes = {
-            winbar = {},
-          },
-          ignore_focus = {},
+          globalstatus = true,
           always_divide_middle = true,
-          globalstatus = false,
-          refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
-          },
         },
-        sections = {},
-        tabline = {
+        sections = {
           lualine_a = {
             {
               "mode",
               fmt = function(str)
                 return str:sub(1, 3)
               end,
+              separator = { right = "", left = "" },
             },
           },
           lualine_b = {
-            { "branch", icon = "" },
-            "diagnostics",
-          },
-          lualine_c = {
+            -- { "branch", icon = "" },
             {
               "filename",
               path = 4,
               symbols = {
-                modified = " +",
-                readonly = " RO",
+                modified = "+",
+                readonly = "RO",
               },
             },
+          },
+          lualine_c = {
+            "diagnostics",
           },
           lualine_x = {
             { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
           },
           lualine_y = {
             {
-              require("noice").api.status.search.get,
-              cond = require("noice").api.status.search.has,
-              icon = " ",
-            },
-          },
-          lualine_z = {
-            {
               require("noice").api.status.mode.get,
               cond = require("noice").api.status.mode.has,
             },
           },
+          lualine_z = {},
         },
       })
     end,
