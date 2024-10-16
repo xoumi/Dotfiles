@@ -57,7 +57,7 @@ return {
         "terraformls",
         "tailwindcss",
         "eslint",
-        "volar",
+        "vuels",
         "gopls",
         "golangci_lint_ls",
         "lua_ls",

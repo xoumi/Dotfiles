@@ -12,7 +12,7 @@ local theme = lush(function(injected_functions)
     CurSearch      { Search, gui="" }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
     -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute     { }, -- |:substitute| replacement text highlighting
-    Directory      { Normal, gui="underline" }, -- Directory names (and other special names in listings)
+    Directory      { fg=colors.cfgdd, gui="bold" }, -- Directory names (and other special names in listings)
     DiffChange     { bg=colors.yellow.darken(80).saturate(-70) }, -- Diff mode: Added line |diff.txt|
     DiffDelete     { bg=colors.red.darken(80).saturate(-75) }, -- Diff mode: Added line |diff.txt|
     DiffAdd        { bg=colors.green.darken(80).saturate(-80) }, -- Diff mode: Added line |diff.txt|
@@ -62,7 +62,7 @@ local theme = lush(function(injected_functions)
     Operator       { Conditional }, --   "sizeof", "+", "*", etc.
     Repeat         { fg=colors.cfgd }, --   for, do, while, etc.
     Exception      { Conditional }, --   try, catch, throw
-    Keyword        { fg=colors.cfgd }, --   any other keyword
+    Keyword        { fg=colors.cfgdd }, --   any other keyword
 
     Type            { fg=colors.cfgd, gui="italic" }, -- (*) int, long, char, etc.
 
@@ -86,7 +86,7 @@ local theme = lush(function(injected_functions)
     sym"@keyword.repeat.typescript" { fg=colors.c2 },
 
     -- Plugins
-    TelescopeBorder             { fg = colors.border, bg = "NONE" },
+    TelescopeBorder             { fg = colors.border},
     TelescopeNormal             { fg = colors.cfg, bg = "NONE" },
     TelescopePromptCounter      { Normal },
     TelescopeTitle              { fg = colors.cfg },

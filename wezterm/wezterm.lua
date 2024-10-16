@@ -55,6 +55,6 @@ config.colors = {
   },
 }
 
-config.window_background_opacity = 0.6
+config.window_background_opacity = 0.85
 config.macos_window_background_blur = 100
 return config

@@ -27,6 +27,7 @@ o.conceallevel = 2
 o.concealcursor = "c"
 o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 o.showmode = false
+o.hidden = false
 
 -- Disable for nvim-tree
 g.loaded_netrw = 1
