@@ -37,7 +37,7 @@ gui:
 
   # The weight of the expanded side panel, relative to the other panels. 2 means
   # twice as tall as the other panels. Only relevant if `expandFocusedSidePanel` is true.
-  expandedSidePanelWeight: 10
+  expandedSidePanelWeight: 100
 
   # Sometimes the main window is split in two (e.g. when the selected file has both staged and unstaged changes). This setting controls how the two sections are split.
   # Options are:

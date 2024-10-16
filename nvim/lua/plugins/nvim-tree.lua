@@ -74,8 +74,8 @@ return {
     lazy = true,
     opts = {
       keymaps = {
-        ["<Esc>"] = { action = "close", unwatch = true },
-        ["<Tab>"] = { action = "toggle_focus" },
+        ["<Esc>"] = false,
+        ["<Tab>"] = false,
         ["<CR>"] = { open = "edit" },
         ["<C-t>"] = { open = "tab" },
         ["<C-v>"] = { open = "vertical" },
