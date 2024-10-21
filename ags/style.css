@@ -1,57 +1,45 @@
-window.notification-popups box.notifications {
-    padding: .5em;
+window {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0);
 }
 
-.icon {
-    min-width: 68px;
-    min-height: 68px;
-    margin-right: 1em;
+.Bar centerbox {
+  padding: .5rem 0;
 }
 
-.icon image {
-    font-size: 58px;
-    /* to center the icon */
-    margin: 5px;
-    color: @theme_fg_color;
+.Bar .Media {
+  margin: 0 1rem;
+}
+.Bar .Media .Cover {
+  min-width: 2rem;
+  min-height: 2rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3rem;
 }
 
-.icon box {
-    min-width: 68px;
-    min-height: 68px;
-    border-radius: 7px;
+.Bar .Right {
+  margin: 0 1rem;
 }
 
-.notification {
-    min-width: 350px;
-    border-radius: 11px;
-    padding: 1em;
-    margin: .5em;
-    border: 1px solid @wm_borders_edge;
-    background-color: @theme_bg_color;
+.Wallpaper {
+  min-height: calc(1440px - 5.5rem);
+  padding: 5rem;
 }
 
-.notification.critical {
-    border: 1px solid lightcoral;
+.Wallpaper viewport {
+  border: none;
+  background: rgba(0, 0, 0, 0);
 }
 
-.title {
-    color: @theme_fg_color;
-    font-size: 1.4em;
-}
-
-.body {
-    color: @theme_unfocused_fg_color;
-}
-
-.actions .action-button {
-    margin: 0 .4em;
-    margin-top: .8em;
-}
-
-.actions .action-button:first-child {
-    margin-left: 0;
-}
-
-.actions .action-button:last-child {
-    margin-right: 0;
+.Wallpaper .Thumbnail {
+  min-width: 20rem;
+  min-height: 11.25rem;
+  background-size: cover;
+  background-position: center;
+  margin: .5rem 0;
+  border: none;
+  box-shadow: none;
+  border-radius: .5rem;
 }

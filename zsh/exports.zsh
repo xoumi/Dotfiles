@@ -7,6 +7,7 @@ export STARSHIP_CONFIG=~/.config/zsh/starship.toml
 export NVM_DIR="$HOME/.config/nvm"
 export DOT_DIR="$MY_HOME/doc/dot"
 export PATH="$PATH:$DOT_DIR/bin"
+export fpath=($fpath $ZSH_CONFIG/functions)
 
 # Use bat to colorize man
 export MANPAGER="zsh -c 'col -bx | bat -l man -p'"

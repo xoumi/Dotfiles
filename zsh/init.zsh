@@ -1,6 +1,7 @@
 MY_HOME=$HOME/str
 ZSH_CONFIG=$MY_HOME/doc/dot/zsh
 
+source $ZSH_CONFIG/functions.zsh
 source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/prompt.zsh
 source $ZSH_CONFIG/opts.zsh
