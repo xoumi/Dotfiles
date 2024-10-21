@@ -1,6 +1,7 @@
+-- Markdown preview web server powered by Deno
 return {
     "toppair/peek.nvim",
-    event = { "VeryLazy" },
+    cmd = "PeekOpen",
     build = "deno task --quiet build:fast",
     config = function()
         require("peek").setup()

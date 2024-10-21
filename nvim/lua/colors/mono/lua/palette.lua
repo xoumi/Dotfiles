@@ -6,8 +6,8 @@ local c2 = hsl(20, 90, 80)
 
 return {
   cfg = cfg,
-  cfgd = cfg.darken(30),
-  cfgdd = cfg.darken(50),
+  cfgd = cfg.darken(20),
+  cfgdd = cfg.darken(40),
   cfgl = cfg.lighten(20),
   cbg = hsl(100, 0, 10),
   cbgl = hsl(100, 0, 30),

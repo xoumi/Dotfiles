@@ -68,6 +68,17 @@ return {
         lineFoldingOnly = true,
       }
 
+      local root_dir = {
+        tailwindcss = function(fname)
+            local root_pattern = require("lspconfig").util.root_pattern(
+              "tailwind.config.cjs",
+              "tailwind.config.js",
+              "tailwind.config.ts"
+            )
+            return root_pattern(fname)
+          end
+      }
+
       local ls_settings = {
         gopls = {
           gopls = {
@@ -91,6 +102,7 @@ return {
         lspconfig[ls].setup({
           capabilities = capabilities,
           settings = ls_settings[ls],
+          root_dir = root_dir[ls]
         })
       end
 

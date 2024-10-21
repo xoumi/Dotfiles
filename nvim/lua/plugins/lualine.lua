@@ -1,11 +1,5 @@
 return {
   {
-    "tiagovla/scope.nvim",
-    config = function()
-      require("scope").setup({})
-    end,
-  },
-  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()

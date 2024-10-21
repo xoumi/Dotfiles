@@ -9,7 +9,7 @@ local theme = lush(function(injected_functions)
     Conceal        ( colors.cnone ), -- Placeholder characters substituted for concealed text (see 'conceallevel')
     -- NonText        { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Search         { fg=colors.green, gui="reverse" }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
-    CurSearch      { Search, gui="" }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
+    CurSearch      { Search, gui="reverse bold" }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
     -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute     { }, -- |:substitute| replacement text highlighting
     Directory      { fg=colors.cfgdd, gui="bold" }, -- Directory names (and other special names in listings)
@@ -23,6 +23,7 @@ local theme = lush(function(injected_functions)
     Folded         { fg=colors.cbgl }, -- Line used for closed folds
     LineNr         { fg=colors.cfgd }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr   { Normal }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLine     { bg=colors.cbg },
     MatchParen     { gui="underline" }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     NormalFloat    ( colors.cnone ), -- Normal text in floating windows.
     FloatBorder    { fg=colors.border }, -- Border of floating windows.
@@ -43,22 +44,21 @@ local theme = lush(function(injected_functions)
     -- SpecialKey     { }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
     Visual         { bg=colors.border }, -- Visual mode selection
     WarningMsg     { fg=colors.yellow }, -- Warning messages
-    Winseparator   { fg=colors.border, bg="NONE" }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
+    Winseparator   { fg=colors.border, bg="none" }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
 
     Comment        { fg = colors.cfgdd }, -- Any comment
 
-    Constant       { }, -- (*) Any constant
-    String         { fg=colors.c1l }, --   A string constant: "this is a string"
-    Number         { fg=colors.c2 }, --   A number constant: 234, 0xff
-    Boolean        { fg=colors.c2, gui="bold" }, --   A boolean constant: TRUE, false
+    String         { fg=colors.cfg }, --   A string constant: "this is a string"
+    Number         { fg=colors.c3 }, --   A number constant: 234, 0xff
+    Boolean        { fg=colors.c3, gui="bold" }, --   A boolean constant: TRUE, false
     Character      { String }, --   A character constant: 'c', '\n'
     Float          { Number }, --   A floating point constant: 2.3e10
 
-    Identifier     { fg=colors.cfg, gui="" }, -- (*) Any variable name
-    Function       { fg=colors.cfg, gui='italic bold'}, --   Function name (also: methods for classes)
+    Identifier     { fg=colors.c1, gui="" }, -- (*) Any variable name
+    Function       { fg=colors.c2, gui='italic'}, --   Function name (also: methods for classes)
 
     Statement      { fg=colors.cfgd }, -- (*) Any statement
-    Conditional    { fg=colors.c3 }, --   if, then, else, endif, switch, etc.
+    Conditional    { fg=colors.c2 }, --   if, then, else, endif, switch, etc.
     Operator       { Conditional }, --   "sizeof", "+", "*", etc.
     Repeat         { fg=colors.cfgd }, --   for, do, while, etc.
     Exception      { Conditional }, --   try, catch, throw
@@ -66,23 +66,23 @@ local theme = lush(function(injected_functions)
 
     Type            { fg=colors.cfgd, gui="italic" }, -- (*) int, long, char, etc.
 
-    Special        { fg=colors.c3, gui="bold" }, -- (*) Any special symbol
+    Special        { fg=colors.cbgl, gui="bold" }, -- (*) Any special symbol
     Delimiter      { fg=colors.cbgl, gui="bold" },
 
     Todo           { fg=colors.cbg, bg=colors.c1 }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     DiagnosticError            { fg=colors.red } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticUnderlineWarn    { fg=colors.yellow, gui="underline"},
-    DiagnosticUnderlineError    { fg=colors.red, gui="underline"},
+    DiagnosticUnderlineError   { fg=colors.red, gui="underline"},
     DiagnosticWarn             { fg=colors.yellow } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticInfo             { fg=colors.cfg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticHint             { fg=colors.cfgd } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticOk               { fg=colors.green } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
 
     -- Tree Sitter
-    sym"@type.typescript" { String },
-    sym"@tag.tsx" { String },
-    sym"@tag.attribute.tsx" { fg=colors.cfgd },
+    sym"@type.typescript"           { String },
+    sym"@tag.tsx"                   { String },
+    sym"@tag.attribute.tsx"         { fg=colors.cfgd },
     sym"@keyword.repeat.typescript" { fg=colors.c2 },
 
     -- Plugins
@@ -93,7 +93,9 @@ local theme = lush(function(injected_functions)
     TelescopePromptBorder       { fg = colors.border, bg = "NONE"},
     TelescopePromptNormal       { fg = colors.cfg, bg = "NONE"},
     TelescopeMatching           { fg = colors.c1, bg="NONE", gui="bold" },
-    LazyGitBorder               {FloatBorder}
+    LazyGitBorder               { fg="black"},
+    NeoTreeTabInactive          { fg=colors.cfg },
+    NeoTreeTabActive            { fg=colors.c1 },
   }
 end)
 
