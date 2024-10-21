@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     {
-      "<leader>xx",
+      "<leader>cx",
       "<cmd>Trouble diagnostics toggle<cr>",
       desc = "Diagnostics (Trouble)",
     },
@@ -13,23 +13,20 @@ return {
       desc = "Symbols (Trouble)",
     },
     {
-      "<leader>cl",
-      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-      desc = "LSP Definitions / references / ... (Trouble)",
+      "<leader>cr",
+      "<cmd>Trouble lsp_references toggle win.position=right<cr>",
+      desc = "LSP refrences",
     },
     {
-      "<leader>xL",
-      "<cmd>Trouble loclist toggle<cr>",
-      desc = "Location List (Trouble)",
-    },
-    {
-      "<leader>xQ",
+      "<leader>cq",
       "<cmd>Trouble qflist toggle<cr>",
       desc = "Quickfix List (Trouble)",
     },
   },
   opts = {
     auto_close = true,
-    focus = true
+    focus = true,
+    warn_no_results = false, -- show a warning when there are no results
+    open_no_results = true,
   },
 }

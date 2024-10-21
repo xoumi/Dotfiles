@@ -21,7 +21,7 @@ return {
           enabled = false,
         },
         message = {
-          enabled = true,
+          enabled = false,
         },
         documentation = {
           enabled = false,
@@ -44,7 +44,7 @@ return {
             winblend = 0,
           },
           position = {
-            row = 0,
+            row = -1,
             col = "100%",
           },
         },

@@ -13,7 +13,7 @@ vim.wo.foldnestmax = 1
 -- Generic
 o.termguicolors = true
 o.ignorecase = true
-o.signcolumn = "yes"
+o.signcolumn = "no"
 o.scrolloff = 15
 o.cmdheight = 0
 o.pumblend = 0
@@ -22,11 +22,12 @@ o.relativenumber = false
 o.number = true
 o.cursorline = false
 o.winblend = 0
-o.conceallevel = 2
+o.conceallevel = 0
 o.concealcursor = "c"
-o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions"
 o.showmode = false
-o.hidden = false
+o.hidden = true
+o.splitkeep = "screen"
 
 -- Disable for nvim-tree
 g.loaded_netrw = 1

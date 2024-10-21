@@ -5,6 +5,7 @@ return {
     local cb = function()
       local fn = vim.fn
 
+      -- Get and use Winseparator highlight
       local function get_color(group, attr)
         return fn.synIDattr(fn.synIDtrans(fn.hlID("Winseparator")), "fg#")
       end
@@ -30,6 +31,10 @@ return {
         enable = false,
         use_treesitter = true,
         style = { "#aaaaaa" },
+      },
+      exclude_filetypes = {
+        dashboard = true,
+        ["neo-tree"] = true
       },
       indent = { enable = false },
       blank = { enable = false },

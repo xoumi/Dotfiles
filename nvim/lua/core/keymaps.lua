@@ -45,8 +45,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function()
     -- vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, opts("Goto Definition"))
     -- vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts("Show hover"))
-    vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "format" })
-    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename"))
+    vim.keymap.set("n", "<leader>=", vim.lsp.buf.format, { desc = "format" })
+    vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, opts("Rename"))
     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code actions"))
   end,
 })
@@ -61,8 +61,8 @@ set("n", "<leader>m", require('treesj').toggle, opts("Toggle Split"))
 -- LSP Popups
 local preview = require('goto-preview')
 set("n", "<leader>d", preview.goto_preview_definition, opts("Definition Popup"))
--- nnoremap gpt <cmd>lua require('goto-preview').goto_preview_type_definition()<CR>
--- nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>
--- nnoremap gpD <cmd>lua require('goto-preview').goto_preview_declaration()<CR>
--- nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>
--- nnoremap gpr <cmd>lua require('goto-preview').goto_preview_references()<CR>
+set("n", "<leader>r", preview.goto_preview_references, opts("Definition Popup"))
+
+-- Neotree
+set("n", "<leader>fb", "<cmd>Neotree source=buffers reveal<cr>", opts("Neotree"))
+set("n", "<leader>b", "<cmd>Neotree reveal<cr>", opts("Neotree"))
