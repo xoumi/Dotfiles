@@ -68,12 +68,13 @@ gui:
   theme:
     # Border color of focused window
     activeBorderColor:
-      - blue
+      - black
       - bold
 
     # Border color of non-focused windows
     inactiveBorderColor:
-      - default
+      - black
+      - bold
 
     # Border color of focused window when searching in that window
     searchingActiveBorderColor:

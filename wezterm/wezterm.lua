@@ -20,10 +20,10 @@ config.enable_tab_bar = false
 config.default_cursor_style = 'SteadyUnderline'
 config.underline_thickness = 3
 config.window_padding = {
-  left = 30,
-  top = 40,
-  right = 30,
-  bottom = 40,
+  left = 10,
+  top = 24,
+  right = 10,
+  bottom = 10,
 }
 
 config.colors = {

@@ -15,21 +15,11 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
+        "denols",
         "tailwindcss",
         "eslint",
         "volar",
       },
-    },
-  },
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {
-      settings = {
-        tsserver_file_preferences = {
-          importModuleSpecifierPreference = "non-relative"
-        }
-      }
     },
   },
   {
@@ -58,6 +48,7 @@ return {
         "tailwindcss",
         "eslint",
         "vuels",
+        "denols",
         "gopls",
         "golangci_lint_ls",
         "lua_ls",
@@ -70,13 +61,14 @@ return {
 
       local root_dir = {
         tailwindcss = function(fname)
-            local root_pattern = require("lspconfig").util.root_pattern(
-              "tailwind.config.cjs",
-              "tailwind.config.js",
-              "tailwind.config.ts"
-            )
-            return root_pattern(fname)
-          end
+          local root_pattern = require("lspconfig").util.root_pattern(
+            "tailwind.config.cjs",
+            "tailwind.config.js",
+            "tailwind.config.ts"
+          )
+          return root_pattern(fname)
+        end,
+        denols = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
       }
 
       local ls_settings = {
@@ -129,4 +121,21 @@ return {
       })
     end,
   },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    config = function()
+      local nvim_lsp = require('lspconfig')
+      require("typescript-tools").setup {
+        root_dir = nvim_lsp.util.root_pattern("package.json"),
+        single_file_support = false,
+        settings = {
+          tsserver_file_preferences = {
+            importModuleSpecifierPreference = "non-relative"
+          }
+        }
+      }
+    end
+  },
+
 }

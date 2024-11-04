@@ -1,5 +1,19 @@
 return {
   {
+    "s1n7ax/nvim-window-picker",
+    name = "window-picker",
+    event = "VeryLazy",
+    version = "2.*",
+    opts = {
+      hint = "statusline-winbar",
+      picker_config = {
+        statusline_winbar_picker = {
+          use_winbar = "never", -- "always" | "never" | "smart"
+        },
+      },
+    },
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
@@ -15,16 +29,6 @@ return {
       enable_cursor_hijack = true,
       use_default_mappings = false,
       hide_root_node = true,
-      source_selector = {
-        winbar = true,
-        content_layout = "center",
-        tabs_layout = "equal",
-        separator = { left = "", right = "" },
-        sources = {
-          { source = "filesystem" },
-          { source = "buffers" },
-        },
-      },
       open_files_do_not_replace_types = { "trouble", "qf" },
       default_component_configs = {
         container = {
@@ -86,12 +90,24 @@ return {
           ["i"] = "show_file_details",
         },
       },
+      filesystem = {
+        follow_current_file = {
+          enabled = true, -- This will find and focus the file in the active buffer every time
+          leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+        },
+        group_empty_dirs = true,
+      },
       buffers = {
+        follow_current_file = {
+          enabled = true,
+          leave_dirs_open = false,
+        },
+        group_empty_dirs = true,
         show_unloaded = true,
         window = {
           mappings = {
-            ["d"] = "buffer_delete"
-          }
+            ["d"] = "buffer_delete",
+          },
         },
       },
     },
